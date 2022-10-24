@@ -4,6 +4,7 @@
       "": ""
     }
   },
+  "ProfilePage": "ProfilePage",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",

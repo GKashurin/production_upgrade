@@ -25,5 +25,12 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Георгий",
+    "lastName": "Кашурин",
+    "currency": "RUB",
+    "city": "Ekaterinburg",
+    "username": "admin",
+    "avatar": "<https://www.vecteezy.com/vector-art/2551781-avatar-using-laptop-online-education-and-development-elearning-gradient-style-icon\">avatar using laptop online education and development elearning gradient style icon Vectors by Vecteezy"
+  }
 }
