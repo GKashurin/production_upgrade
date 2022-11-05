@@ -35,7 +35,7 @@ const article: Article = {
         {
             id: '4',
             type: ArticleBlockType.CODE,
-            code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>\n\n    <script>\n      document.getElementById('hello').innerHTML = 'Hello, world!';\n    </script>\n  </body>\n</html>;',
+            code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: '5',
@@ -54,7 +54,7 @@ const article: Article = {
         {
             id: '3',
             type: ArticleBlockType.CODE,
-            code: 'const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);',
+            code: 'const path = require("path");\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, "db.json"));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);',
         },
         {
             id: '7',
