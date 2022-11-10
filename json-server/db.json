@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,23 +102,64 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sd",
+      "id": "PBNMt6U"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Привет мир",
+      "id": "KiuhwYh"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "другой юзер",
+      "id": "y-qIPa-"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://img.freepik.com/free-vector/binary-code-concept-illustration_114360-6578.jpg?w=740&t=st=1667115876~exp=1667116476~hmac=631688225444e68e4c5a596f51bfc5281f461f4539d2baeffcc0f4baaba83902"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "firstName": "Георгий1",
-    "lastName": "Кашурин1",
-    "age": "30",
-    "currency": "EUR",
-    "city": "Ekaterinburg",
-    "username": "admin",
-    "avatar": "https://img.freepik.com/free-vector/binary-code-concept-illustration_114360-6578.jpg?w=740&t=st=1667115876~exp=1667116476~hmac=631688225444e68e4c5a596f51bfc5281f461f4539d2baeffcc0f4baaba83902",
-    "country": "Kazahstan"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Георгий1",
+      "lastName": "Кашурин1",
+      "age": "30",
+      "currency": "EUR",
+      "city": "Ekaterinburg",
+      "username": "admin",
+      "avatar": "https://img.freepik.com/free-vector/binary-code-concept-illustration_114360-6578.jpg?w=740&t=st=1667115876~exp=1667116476~hmac=631688225444e68e4c5a596f51bfc5281f461f4539d2baeffcc0f4baaba83902",
+      "country": "Kazahstan"
+    },
+    {
+      "id": "2",
+      "firstName": "Георгий",
+      "lastName": "Кашурин",
+      "age": 333,
+      "currency": "EUR",
+      "city": "Ekaterinburg",
+      "username": "GK",
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "country": "Russia"
+    }
+  ]
 }
