@@ -11,8 +11,8 @@ import { To } from 'history';
 import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
-import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import {AddCommentFormSchema} from "features/AddCommentForm";
 
 export interface StateSchema {
   counter: CounterSchema;
