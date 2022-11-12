@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
@@ -17,7 +17,8 @@ import {
     getProfileValidateErrors,
     profileActions,
     ProfileCard,
-    profileReducer, ValidateProfileError,
+    profileReducer,
+    ValidateProfileError,
 } from 'entities/Profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
