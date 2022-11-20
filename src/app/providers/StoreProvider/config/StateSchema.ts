@@ -10,8 +10,8 @@ import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { AddCommentFormSchema } from 'addCommentForm';
 import { ScrollSaveSchema } from 'features/ScrollSave';
+import {AddCommentFormSchema} from "features/addCommentForm";
 
 export interface StateSchema {
   counter: CounterSchema;
