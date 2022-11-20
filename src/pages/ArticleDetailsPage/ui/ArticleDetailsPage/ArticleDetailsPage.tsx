@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { AddCommentForm } from 'features/AddCommentForm';
+import { Page } from 'widgets/Page/Page';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
@@ -56,7 +57,7 @@ export const ArticleDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Назад к списку')}
                 </Button>
@@ -64,7 +65,7 @@ export const ArticleDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
                 <AddCommentForm onSendComment={onSendComment} />
                 <Text title={t('Комментарии')} />
                 <CommentList comments={comments} isLoading={commentsIsLoading} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
