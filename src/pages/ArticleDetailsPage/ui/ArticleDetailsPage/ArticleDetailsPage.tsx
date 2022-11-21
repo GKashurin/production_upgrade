@@ -20,7 +20,7 @@ import {getArticleRecommendationsIsLoading} from "../../model/selectors/recommen
 import {fetchArticleRecommendations} from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { articleDetailsPageReducer } from '../../model/slice';
 import {ArticleDetailsPageHeader} from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { AddCommentForm } from 'features/addCommentForm';
+import { AddCommentForm } from 'features/AddCommentForm';
 
 interface ArticlesDetailsPageProps {
   className?: string;
