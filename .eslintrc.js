@@ -22,8 +22,10 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'import-checker-eslint-plugin'
     ],
     rules: {
+        'import-checker-eslint-plugin/path-checker': 'error',
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
@@ -47,10 +49,10 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to'],
+                ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'max-len': ['error', { ignoreComments: true, code: 130 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks

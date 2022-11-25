@@ -5,15 +5,15 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
-import {HTMLAttributeAnchorTarget} from 'react';
+import { HTMLAttributeAnchorTarget } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
-import {AppLink} from "shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
   className?: string;
@@ -23,7 +23,9 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
-    const { className, article, view, target } = props;
+    const {
+        className, article, view, target,
+    } = props;
     const { t } = useTranslation();
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -55,8 +57,8 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     )}
                     <div className={cls.footer}>
                         <AppLink
-                          to={RoutePath.article_details + article.id}
-                          target={target}
+                            to={RoutePath.article_details + article.id}
+                            target={target}
                         >
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('Читать далее...')}
@@ -71,9 +73,9 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
     return (
         <AppLink
-          to={RoutePath.article_details + article.id}
-          className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-          target={target}
+            to={RoutePath.article_details + article.id}
+            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            target={target}
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>

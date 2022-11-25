@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import {
     ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView,
 } from 'entities/Article';

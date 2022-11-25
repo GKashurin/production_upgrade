@@ -7,8 +7,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { Page } from 'widgets/Page/Page';
-import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
 import { useSearchParams } from 'react-router-dom';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,

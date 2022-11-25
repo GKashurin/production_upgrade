@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import {HTMLAttributeAnchorTarget, memo} from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticleList.module.scss';
@@ -27,7 +27,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         articles,
         view = ArticleView.SMALL,
         isLoading,
-        target
+        target,
     } = props;
     const { t } = useTranslation();
 
