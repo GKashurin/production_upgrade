@@ -9,6 +9,8 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
+import {Dropdown} from "shared/ui/Dropdown/Dropdown";
+import {Avatar} from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
     className?: string;
@@ -35,17 +37,33 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Text theme={TextTheme.INVERTED} className={cls.appName} title={t('GK journal')} />
-                <AppLink className={cls.createBtn} theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>
+                <Text
+                  theme={TextTheme.INVERTED}
+                  className={cls.appName}
+                  title={t('GK journal')}
+                />
+                <AppLink
+                  className={cls.createBtn}
+                  theme={AppLinkTheme.SECONDARY}
+                  to={RoutePath.article_create}
+                >
                     {t('Создать статью')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t('Выйти')}
-                </Button>
+              <Dropdown
+                className={cls.dropdown}
+                direction='bottom left'
+                items={[
+                  {
+                    content: t('Профиль'),
+                    href: RoutePath.profile + authData.id,
+                  },
+                  {
+                    content: t('Выйти'),
+                    onClick: onLogout,
+                  },
+                ]}
+                trigger={<Avatar src={authData.avatar} size={30} />}
+              />
             </header>
         );
     }
