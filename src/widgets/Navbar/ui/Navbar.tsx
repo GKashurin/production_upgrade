@@ -8,9 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
-import {Dropdown} from "shared/ui/Dropdown/Dropdown";
-import {Avatar} from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
     className?: string;
@@ -38,32 +38,32 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text
-                  theme={TextTheme.INVERTED}
-                  className={cls.appName}
-                  title={t('GK journal')}
+                    theme={TextTheme.INVERTED}
+                    className={cls.appName}
+                    title={t('GK journal')}
                 />
                 <AppLink
-                  className={cls.createBtn}
-                  theme={AppLinkTheme.SECONDARY}
-                  to={RoutePath.article_create}
+                    className={cls.createBtn}
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.article_create}
                 >
                     {t('Создать статью')}
                 </AppLink>
-              <Dropdown
-                className={cls.dropdown}
-                direction='bottom left'
-                items={[
-                  {
-                    content: t('Профиль'),
-                    href: RoutePath.profile + authData.id,
-                  },
-                  {
-                    content: t('Выйти'),
-                    onClick: onLogout,
-                  },
-                ]}
-                trigger={<Avatar src={authData.avatar} size={30} />}
-              />
+                <Dropdown
+                    className={cls.dropdown}
+                    direction="bottom left"
+                    items={[
+                        {
+                            content: t('Профиль'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Выйти'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar src={authData.avatar} size={30} />}
+                />
             </header>
         );
     }

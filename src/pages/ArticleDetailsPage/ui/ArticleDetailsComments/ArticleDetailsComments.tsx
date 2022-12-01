@@ -5,15 +5,14 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { VStack } from 'shared/ui/Stack';
 import {
-  fetchCommentsByArticleId,
+    fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {getArticleComments} from "../../model/slice/articleDetailsCommentsSlice";
-import {VStack} from "shared/ui/Stack";
-
+import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -21,30 +20,30 @@ interface ArticleDetailsCommentsProps {
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-  const {id} = props;
-  const {t} = useTranslation()
-  const dispatch = useAppDispatch();
+    const { id, className } = props;
+    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
 
-  const comments = useSelector(getArticleComments.selectAll);
+    const comments = useSelector(getArticleComments.selectAll);
 
-  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
 
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-  });
+    useInitialEffect(() => {
+        dispatch(fetchCommentsByArticleId(id));
+    });
 
-  return (
-    <VStack gap='16'>
-      <Text
-        size={TextSize.L}
-        title={t('Комментарии')}
-      />
-      <AddCommentForm onSendComment={onSendComment}/>
-      <CommentList comments={comments} isLoading={commentsIsLoading}/>
-    </VStack>
-  )
-})
+    return (
+        <VStack gap="16">
+            <Text
+                size={TextSize.L}
+                title={t('Комментарии')}
+            />
+            <AddCommentForm onSendComment={onSendComment} />
+            <CommentList comments={comments} isLoading={commentsIsLoading} />
+        </VStack>
+    );
+});

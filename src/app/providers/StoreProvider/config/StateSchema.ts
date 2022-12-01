@@ -11,8 +11,8 @@ import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaveSchema } from 'features/ScrollSave';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
-import {rtkApi} from "shared/api/rtkApi";
-import {ProfileSchema} from "features/EditableProfileCard";
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/EditableProfileCard';
 
 export interface StateSchema {
   counter: CounterSchema;

@@ -10,7 +10,7 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import {ArticleInfiniteList} from "../ArticleInfiniteList/ArticleInfiniteList";
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
   className?: string;
@@ -33,16 +33,16 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader 
-          reducers={reducers}
-          removeAfterUnmount={false}
+        <DynamicModuleLoader
+            reducers={reducers}
+            removeAfterUnmount={false}
         >
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
                 <ArticlesPageFilters />
-                <ArticleInfiniteList className={cls.list}/>
+                <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
     );
