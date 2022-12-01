@@ -20,7 +20,7 @@ describe('fetchNextArticlesPage.test', () => {
         await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4); // столько раз вызывается диспатч
-        expect(fetchArticlesList).toHaveBeenCalledWith({}); // функция вызывается с нужным аргументом
+        expect(fetchArticlesList).toHaveBeenCalled(); // функция вызывается с нужным аргументом
     });
     test('fetchArticleList not called', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
