@@ -37,7 +37,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     });
 
     return (
-        <VStack gap="16">
+        <VStack gap="16" max>
             <Text
                 size={TextSize.L}
                 title={t('Комментарии')}

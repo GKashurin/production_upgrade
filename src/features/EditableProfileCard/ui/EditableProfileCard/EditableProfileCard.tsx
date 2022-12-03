@@ -93,6 +93,7 @@ export const EditableProfileCard = ({ className, id }: EditableProfileCardProps)
                         key={err}
                         theme={TextTheme.ERROR}
                         text={validateErrorTranslates[err]}
+                        data-testid='EditableProfileCard.Error'
                     />
                 ))}
                 <ProfileCard

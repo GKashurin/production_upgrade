@@ -2977,10 +2977,10 @@
   dependencies:
     "defer-to-connect" "^1.0.1"
 
-"@testing-library/dom@^8.0.0", "@testing-library/dom@^8.3.0", "@testing-library/dom@>=7.21.4":
-  "integrity" "sha512-9LId28I+lx70wUiZjLvi1DB/WT2zGOxUh46glrSNMaWVx849kKAluezVzZrXJfTKKoQTmEOutLes/bHg4Bj3aA=="
-  "resolved" "https://registry.npmjs.org/@testing-library/dom/-/dom-8.11.3.tgz"
-  "version" "8.11.3"
+"@testing-library/dom@^8.0.0", "@testing-library/dom@^8.19.0", "@testing-library/dom@^8.3.0", "@testing-library/dom@>=7.21.4":
+  "integrity" "sha512-6YWYPPpxG3e/xOo6HIWwB/58HukkwIVTOaZ0VwdMVjhRUX/01E4FtQbck9GazOOj7MXHc5RBzMrU86iBJHbI+A=="
+  "resolved" "https://registry.npmjs.org/@testing-library/dom/-/dom-8.19.0.tgz"
+  "version" "8.19.0"
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/runtime" "^7.12.5"
@@ -3021,6 +3021,11 @@
   "version" "13.5.0"
   dependencies:
     "@babel/runtime" "^7.12.5"
+
+"@testing-library/user-event@^14.4.3":
+  "integrity" "sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q=="
+  "resolved" "https://registry.npmjs.org/@testing-library/user-event/-/user-event-14.4.3.tgz"
+  "version" "14.4.3"
 
 "@tootallnate/once@1":
   "integrity" "sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw=="

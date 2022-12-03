@@ -11,7 +11,11 @@ interface ArticleRecommendationsListProps {
 
 export const ArticleRecommendationsList = ({ className }: ArticleRecommendationsListProps) => {
     const { t } = useTranslation();
-    const { data: articles } = useArticleRecommendationsList(3);
+    const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
+
+    if (isLoading || error || !articles) {
+      return null
+    }
 
     return (
         <VStack gap="8" className={classNames('', {}, [className])}>
