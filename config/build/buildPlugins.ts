@@ -6,6 +6,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { BuildOptions } from './types/config';
 import CircularDependencyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins({
     paths, isDev, apiUrl, project,
@@ -32,10 +33,19 @@ export function buildPlugins({
                 },
             ],
         }),
-      new CircularDependencyPlugin({
+      new CircularDependencyPlugin({// следит за круговыми зависимостями
           exclude: /node_modules/,
           failOnError: true,
-      })
+      }),
+        new ForkTsCheckerWebpackPlugin({ //выносит проверку типов в отдельный процесс. При отказе от ts-лоадера я добавил '@babel/plugin-transform-typescript' и @babel/plugin-transform-runtime, а они не умеют проверять типы.
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: 'write-references',
+            },
+        }),
     ];
 
     if (isDev) {
