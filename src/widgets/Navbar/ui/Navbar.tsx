@@ -1,17 +1,17 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import React, {memo, useCallback, useState} from 'react';
-import {Button, ButtonTheme} from 'shared/ui/Button/Button';
-import {Text, TextTheme} from 'shared/ui/Text/Text';
-import {LoginModal} from 'features/AuthByUsername';
+import {Button, ButtonTheme} from '@/shared/ui/Button/Button';
+import {Text, TextTheme} from '@/shared/ui/Text/Text';
+import {LoginModal} from '@/features/AuthByUsername';
 import {useSelector} from 'react-redux';
-import {getUserAuthData} from 'entities/User';
-import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
+import {getUserAuthData} from '@/entities/User';
+import {AppLink, AppLinkTheme} from '@/shared/ui/AppLink/AppLink';
+import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
-import {HStack} from "shared/ui/Stack";
-import {NotificationButton} from "features/NotificationButton";
-import {AvatarDropdown} from "features/AvatarDropdown";
+import {HStack} from "@/shared/ui/Stack";
+import {NotificationButton} from "@/features/NotificationButton";
+import {AvatarDropdown} from "@/features/AvatarDropdown";
 
 interface NavbarProps {
   className?: string;

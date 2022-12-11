@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {Popover} from "./Popover";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
-import {Icon} from "shared/ui/Icon/Icon";
-import NotificationIcon from 'shared/assets/icons/notification-20-20.svg'
+import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
+import {Icon} from "@/shared/ui/Icon/Icon";
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 
 export default {
   title: 'shared/Popover',
