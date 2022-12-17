@@ -551,6 +551,43 @@
       ]
     }
   ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "Хрень",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 5,
+      "feedback": "the best",
+      "id": "3PjxRF3"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 5,
+      "feedback": "super",
+      "id": "VGJGRFc"
+    }
+  ],
   "comments": [
     {
       "id": "1",

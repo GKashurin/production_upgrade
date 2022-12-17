@@ -8,7 +8,7 @@ import {classNames} from "@/shared/lib/classNames/classNames";
 
 
 interface PopoverProps {
-    className?: string;
+  className?: string;
   direction?: DropdownDirection;
   trigger: ReactNode;
   children: ReactNode;
@@ -20,7 +20,7 @@ export const Popover = (props: PopoverProps) => {
 
   return (
     <HPopover className={classNames(cls.Popover, {}, [className, popupCls.popup])}>
-      <HPopover.Button className={popupCls.trigger}>
+      <HPopover.Button as='div' className={popupCls.trigger}>
         {trigger}
       </HPopover.Button>
 
