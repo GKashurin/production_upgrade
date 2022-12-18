@@ -1,2 +1,2 @@
-export {ArticlesPage} from './ArticlesPage'
+export { ArticlesPage } from './ArticlesPage';
 // todo добавить стори

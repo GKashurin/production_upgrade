@@ -1,9 +1,9 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
@@ -93,7 +93,7 @@ export const EditableProfileCard = ({ className, id }: EditableProfileCardProps)
                         key={err}
                         theme={TextTheme.ERROR}
                         text={validateErrorTranslates[err]}
-                        data-testid='EditableProfileCard.Error'
+                        data-testid="EditableProfileCard.Error"
                     />
                 ))}
                 <ProfileCard

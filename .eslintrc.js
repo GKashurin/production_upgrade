@@ -25,7 +25,8 @@ module.exports = {
         'import-checker-eslint-plugin'
     ],
     rules: {
-        'import-checker-eslint-plugin/path-checker': 'error',
+        'import-checker-eslint-plugin/path-checker': ['error', {alias: '@'}],
+        'import-checker-eslint-plugin/public-api-imports': ['error', {alias: '@'}],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],

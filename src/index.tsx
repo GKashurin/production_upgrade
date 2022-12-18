@@ -10,7 +10,7 @@ import { StoreProvider } from './app/providers/StoreProvider';
 const container = document.getElementById('root');
 
 if (!container) {
-  throw new Error('Контейнер root не найден. ');
+    throw new Error('Контейнер root не найден. ');
 }
 
 const root = createRoot(container);
@@ -24,5 +24,5 @@ root.render(
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>
-    </BrowserRouter>
-)
+    </BrowserRouter>,
+);

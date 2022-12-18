@@ -12,4 +12,4 @@ export type {
     ReduxStoreWithManager,
     AppDispatch,
     ThunkConfig,
-}
+};

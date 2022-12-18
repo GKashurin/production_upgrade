@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { HTMLAttributes, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
 export enum CardTheme {
@@ -20,7 +20,7 @@ export const Card = (props: CardProps) => {
     } = props;
     return (
         <div
-            className={classNames(cls.Card, {[cls.max]: max}, [className, cls[theme]])}
+            className={classNames(cls.Card, { [cls.max]: max }, [className, cls[theme]])}
             {...otherProps}
         >
             {children}

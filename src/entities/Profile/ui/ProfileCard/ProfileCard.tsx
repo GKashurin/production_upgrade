@@ -1,13 +1,11 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
 import { Input } from '@/shared/ui/Input/Input';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Currency } from '@/entities/Currency/model/types/currency';
-import { CurrencySelect } from '@/entities/Currency';
-import { Country } from '@/entities/Country/model/types/country';
-import { CountrySelect } from '@/entities/Country';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
@@ -84,7 +82,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeFirstname}
                 readonly={readonly}
-                data-testid='Profilecard.firstname'
+                data-testid="Profilecard.firstname"
             />
             <Input
                 value={data?.lastName}
@@ -92,7 +90,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangelastName}
                 readonly={readonly}
-                data-testid='Profilecard.lastname'
+                data-testid="Profilecard.lastname"
             />
             <Input
                 value={data?.age}

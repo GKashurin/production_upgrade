@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { ArticleList } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
@@ -14,7 +14,7 @@ export const ArticleRecommendationsList = ({ className }: ArticleRecommendations
     const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
 
     if (isLoading || error || !articles) {
-      return null
+        return null;
     }
 
     return (
