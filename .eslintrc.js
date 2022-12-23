@@ -26,7 +26,13 @@ module.exports = {
 	],
 	rules: {
 		'import-checker-eslint-plugin/path-checker': ['error', {alias: '@'}],
-		'import-checker-eslint-plugin/public-api-imports': [
+		'import-checker-eslint-plugin/layer-imports': [
+			'error',
+			{
+				alias: '@',
+				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+			},
+		],		'import-checker-eslint-plugin/public-api-imports': [
 			'error',
 			{
 				alias: '@',
