@@ -9,7 +9,7 @@ import {
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import {
     getArticlesPageOrder,
@@ -21,8 +21,8 @@ import {
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
-import {ArticleSortSelector} from "@/features/ArticleSortSelector";
-import {ArticleTypeTabs} from "@/features/ArticleTypeTabs";
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 
 interface ArticlesPageFiltersProps {
   className?: string;

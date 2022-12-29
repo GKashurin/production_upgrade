@@ -7,7 +7,7 @@ import { Dropdown } from '@/shared/ui/Popups';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import {getRouteAdmin, getRouteProfile} from "@/shared/const/router";
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -50,7 +50,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
                     onClick: onLogout,
                 },
             ]}
-            trigger={<Avatar src={authData.avatar} size={30} />}
+            trigger={<Avatar fallbackInverted src={authData.avatar} size={30} />}
         />
     );
 };

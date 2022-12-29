@@ -11,8 +11,9 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './Page.module.scss';
+import { TestsProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestsProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
@@ -48,6 +49,8 @@ export const Page = (props: PageProps) => {
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
+            /* eslint-disable react/destructuring-assignment */
+            data-testid={props['data-testid'] ?? 'page'}
         >
             {children}
             {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}

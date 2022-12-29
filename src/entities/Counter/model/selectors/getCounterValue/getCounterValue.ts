@@ -1,4 +1,4 @@
-import {buildSelector} from "@/shared/lib/store";
+import { buildSelector } from '@/shared/lib/store';
 
 // export const getCounterValue = createSelector(
 //     getCounter,
@@ -6,6 +6,6 @@ import {buildSelector} from "@/shared/lib/store";
 // );
 
 export const [
-  useCounterValue, // хук можно использовать внутри компонентов
-  getCounterValue // эту ф-цию можно использовать в асинхронных экшенах
-] = buildSelector(state => state.counter.value);
+    useCounterValue, // хук можно использовать внутри компонентов
+    getCounterValue, // эту ф-цию можно использовать в асинхронных экшенах
+] = buildSelector((state) => state.counter.value);

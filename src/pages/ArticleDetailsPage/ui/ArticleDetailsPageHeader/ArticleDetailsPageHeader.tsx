@@ -6,7 +6,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
-import {getRouteArticleEdit, getRouteArticles} from "@/shared/const/router";
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 export const ArticleDetailsPageHeader = () => {
     const navigate = useNavigate();

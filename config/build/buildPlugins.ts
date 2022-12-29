@@ -11,7 +11,6 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
     paths, isDev, apiUrl, project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-
     const isProd = !isDev;
 
     const plugins = [
@@ -51,7 +50,7 @@ export function buildPlugins({
         plugins.push(new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
-        }))
+        }));
         plugins.push(new CopyPlugin({
             patterns: [
                 {
@@ -59,7 +58,7 @@ export function buildPlugins({
                     to: paths.buildLocales,
                 },
             ],
-        }),)
+        }));
     }
 
     return plugins;
