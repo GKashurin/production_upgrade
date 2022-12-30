@@ -97,3 +97,9 @@ Big.args = {
     view: ArticleView.BIG,
     article,
 };
+
+export const Small = Template.bind({});
+Small.args = {
+    view: ArticleView.SMALL,
+    article,
+};
