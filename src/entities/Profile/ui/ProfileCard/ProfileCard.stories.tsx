@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from 'static/media/src/shared/assets/tests/binary.jpg';
+import avatar from '../../../../../storybook-static/static/media/binary.b27cf812.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
