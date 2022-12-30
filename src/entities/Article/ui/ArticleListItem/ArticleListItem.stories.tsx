@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { ArticleView } from '../../model/constants/constants';
 import { ArticleListItem } from './ArticleListItem';
 import { Article } from '../../model/types/article';
-import { ArticleView } from '../../model/constants/constants';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -24,7 +24,7 @@ const article = {
     createdAt: '26.02.2022',
     user: {
         id: '1',
-        username: 'Ulbi tv',
+        username: 'GK',
         avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
     type: [
@@ -95,11 +95,5 @@ const article = {
 export const Big = Template.bind({});
 Big.args = {
     view: ArticleView.BIG,
-    article,
-};
-
-export const Small = Template.bind({});
-Small.args = {
-    view: ArticleView.SMALL,
     article,
 };
