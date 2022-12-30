@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from '@/shared/assets/tests/binary.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -25,7 +24,7 @@ Primary.args = {
         firstName: 'asd',
         city: 'asf',
         currency: Currency.USD,
-        avatar,
+        avatar: 'https://img.freepik.com/free-vector/binary-code-concept-illustration_114360-6578.jpg?w=740&t=st=1667115876~exp=1667116476~hmac=631688225444e68e4c5a596f51bfc5281f461f4539d2baeffcc0f4baaba83902',
     },
 };
 
