@@ -24,7 +24,7 @@ Primary.args = {
         firstName: 'asd',
         city: 'asf',
         currency: Currency.USD,
-        avatar: 'static/media/src/shared/assets/tests/binary.jpg'
+        avatar: 'static/media/src/shared/assets/tests/binary.jpg',
     },
 };
 
