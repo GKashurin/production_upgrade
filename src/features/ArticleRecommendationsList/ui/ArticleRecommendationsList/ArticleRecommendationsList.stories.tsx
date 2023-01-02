@@ -10,7 +10,7 @@ export default {
     component: ArticleRecommendationsList,
     argTypes: {
         backgroundColor: { control: 'color' },
-    }
+    },
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;

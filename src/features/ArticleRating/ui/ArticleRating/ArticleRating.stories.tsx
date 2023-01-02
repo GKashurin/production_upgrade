@@ -9,7 +9,7 @@ export default {
     component: ArticleRating,
     argTypes: {
         backgroundColor: { control: 'color' },
-    }
+    },
 } as ComponentMeta<typeof ArticleRating>;
 
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
