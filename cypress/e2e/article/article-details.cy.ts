@@ -15,7 +15,8 @@ describe('Пользователь заходит на страницу стат
   it('и видит содержимое статьи', () => {
     cy.getByTestId('ArticleDetails.Info').should('exist')
   })
-  it('и видит список рекомендаций', () => {
+  it('и видит список рекомендаций, на стабах', () => {
+    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'})
     cy.getByTestId('ArticleRecommendationsList').should('exist')
   })
   it('и отправляет комментарий', () => {
@@ -24,7 +25,8 @@ describe('Пользователь заходит на страницу стат
     cy.addComment('text');
     cy.getByTestId('CommentCard.Content').should('have.length', 1);
   })
-  it('и ставит оценку', () => {
+  it('и ставит оценку, на стабах', () => {
+    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'}) // указываю, что ответ бэкенда - содержимое article-details.json
     cy.getByTestId('ArticleDetails.Info').should('exist')
     cy.getByTestId('RatingCard').scrollIntoView();
     cy.setRate(5, 'feedback');
