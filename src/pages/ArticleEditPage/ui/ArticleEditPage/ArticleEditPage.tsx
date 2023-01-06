@@ -6,19 +6,19 @@ import { Page } from '@/widgets/Page';
 import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
-    className?: string;
+  className?: string;
 }
 
 const ArticleEditPage = ({ className }: ArticleEditPageProps) => {
-    const { t } = useTranslation();
-    const { id } = useParams<{id: string}>();
-    const isEdit = Boolean(id);
-    return (
-        <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-            {isEdit
-                ? t('Редактирование статьи с ID = ') + id
-                : t('Создание новой статьи')}
-        </Page>
-    );
+  const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
+  const isEdit = Boolean(id);
+  return (
+    <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+      {isEdit
+        ? t('Редактирование статьи с ID = ') + id
+        : t('Создание новой статьи')}
+    </Page>
+  );
 };
 export default memo(ArticleEditPage);

@@ -7,51 +7,41 @@ import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface ModalProps {
-    className?: string;
-    children?: ReactNode;
-    isOpen?: boolean;
-    onClose?: () => void;
-    lazy?: boolean;
+  className?: string;
+  children?: ReactNode;
+  isOpen?: boolean;
+  onClose?: () => void;
+  lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-    const {
-        className,
-        children,
-        isOpen,
-        onClose,
-        lazy,
-    } = props;
+  const { className, children, isOpen, onClose, lazy } = props;
 
-    const { theme } = useTheme();
+  const { theme } = useTheme();
 
-    const {
-        isClosing,
-        isMounted,
-        close,
-    } = useModal({
-        isOpen,
-        onClose,
-        animationDelay: 300,
-    });
+  const { isClosing, isMounted, close } = useModal({
+    isOpen,
+    onClose,
+    animationDelay: 300,
+  });
 
-    const mods: Mods = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing,
-    };
+  const mods: Mods = {
+    [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing,
+  };
 
-    if (lazy && !isMounted) {
-        return null;
-    }
+  if (lazy && !isMounted) {
+    return null;
+  }
 
-    return (
-        <Portal>
-            <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
-                <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
-            </div>
-        </Portal>
-    );
+  return (
+    <Portal>
+      <div
+        className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}
+      >
+        <Overlay onClick={close} />
+        <div className={cls.content}>{children}</div>
+      </div>
+    </Portal>
+  );
 };

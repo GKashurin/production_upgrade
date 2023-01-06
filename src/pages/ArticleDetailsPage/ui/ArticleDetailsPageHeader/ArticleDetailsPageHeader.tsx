@@ -9,31 +9,31 @@ import { getCanEditArticle } from '../../model/selectors/article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 export const ArticleDetailsPageHeader = () => {
-    const navigate = useNavigate();
-    const { t } = useTranslation();
-    const article = useSelector(getArticleDetailsData);
-    const canEdit = useSelector(getCanEditArticle);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const article = useSelector(getArticleDetailsData);
+  const canEdit = useSelector(getCanEditArticle);
 
-    const onBackToList = useCallback(() => {
-        navigate(getRouteArticles());
-    }, [navigate]);
+  const onBackToList = useCallback(() => {
+    navigate(getRouteArticles());
+  }, [navigate]);
 
-    const onEditArticle = useCallback(() => {
-        if (article) {
-            navigate(getRouteArticleEdit(article.id));
-        }
-    }, [article, navigate]);
+  const onEditArticle = useCallback(() => {
+    if (article) {
+      navigate(getRouteArticleEdit(article.id));
+    }
+  }, [article, navigate]);
 
-    return (
-        <HStack max justify="between">
-            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                {t('Назад к списку')}
-            </Button>
-            {canEdit && (
-                <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
-                    {t('Редактировать')}
-                </Button>
-            )}
-        </HStack>
-    );
+  return (
+    <HStack max justify="between">
+      <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+        {t('Назад к списку')}
+      </Button>
+      {canEdit && (
+        <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
+          {t('Редактировать')}
+        </Button>
+      )}
+    </HStack>
+  );
 };

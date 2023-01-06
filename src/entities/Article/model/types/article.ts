@@ -23,7 +23,10 @@ export interface ArticleTextBlock extends ArticleBlockBase {
   title?: string;
 }
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
+export type ArticleBlock =
+  | ArticleCodeBlock
+  | ArticleImageBlock
+  | ArticleTextBlock;
 
 export interface Article {
   id: string;
@@ -34,5 +37,5 @@ export interface Article {
   createdAt: string;
   type: ArticleType[];
   blocks: ArticleBlock[];
-  user: User
+  user: User;
 }

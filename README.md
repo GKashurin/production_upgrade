@@ -1,4 +1,5 @@
 # production_upgrade
+
 Памятка по тестированию jest:
 expect - ожидаемое значение параметра, например expect(validateValue(50)).toBe(true).
 describe - обертка над несколькими тестами
@@ -27,9 +28,9 @@ jest.mock() - мокирование сторонних модулей
 axios.get.mockReturnValue - указание, что ожидается в результате
 Пример:
 test('Имя теста', async () => {
-    axios.get.mockReturnValue(response)
-    const data = await functionFetcher()
-    expect(...)
-    expect(...)
+axios.get.mockReturnValue(response)
+const data = await functionFetcher()
+expect(...)
+expect(...)
 })
 toMatchSnapshot() - показывает снэпшоты

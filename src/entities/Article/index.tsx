@@ -1,7 +1,10 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
 export {
-    ArticleView, ArticleSortField, ArticleType, ArticleBlockType,
+  ArticleView,
+  ArticleSortField,
+  ArticleType,
+  ArticleBlockType,
 } from './model/constants/constants';
 
 export type { Article } from './model/types/article';

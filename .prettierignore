@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+coverage
+node_modules
+public
+build
+storybook-static
+*.html
+*.css
+*.scss

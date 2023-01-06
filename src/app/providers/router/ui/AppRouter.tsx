@@ -6,26 +6,30 @@ import { routeConfig } from '../config/routerConfig';
 import { AppRoutesProps } from '@/shared/types/router';
 
 const AppRouter = () => {
-    const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-        const element = (
-            <Suspense fallback={<PageLoader />}>
-                {route.element}
-            </Suspense>
-        );
-        return (
-            <Route
-                key={route.path}
-                path={route.path}
-                element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
-            />
-        );
-    }, []);
-    return (
-        <Routes>
-            {Object.values(routeConfig).map(renderWithWrapper)}
-            {/* Строка выше аналогична записи: {Object.values(routeConfig).map((route) => renderWithWrapper(route))} */}
-        </Routes>
+  const renderWithWrapper = useCallback((route: AppRoutesProps) => {
+    const element = (
+      <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
     );
+    return (
+      <Route
+        key={route.path}
+        path={route.path}
+        element={
+          route.authOnly ? (
+            <RequireAuth roles={route.roles}>{element}</RequireAuth>
+          ) : (
+            element
+          )
+        }
+      />
+    );
+  }, []);
+  return (
+    <Routes>
+      {Object.values(routeConfig).map(renderWithWrapper)}
+      {/* Строка выше аналогична записи: {Object.values(routeConfig).map((route) => renderWithWrapper(route))} */}
+    </Routes>
+  );
 };
 
 export default memo(AppRouter);

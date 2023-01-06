@@ -1,65 +1,79 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {memo, useCallback} from 'react';
+import { memo, useCallback } from 'react';
 import { RatingCard } from '@/entities/Rating';
-import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
+import {
+  useGetArticleRating,
+  useRateArticle,
+} from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRatingProps {
   className?: string;
-  articleId: string
+  articleId: string;
 }
 
 const ArticleRating = (props: ArticleRatingProps) => {
-    const { className, articleId } = props;
-    const { t } = useTranslation();
-    const userData = useSelector(getUserAuthData);
+  const { className, articleId } = props;
+  const { t } = useTranslation();
+  const userData = useSelector(getUserAuthData);
 
-    const { data, isLoading } = useGetArticleRating({
-        articleId,
-        userId: userData?.id ?? '',
-    });
+  const { data, isLoading } = useGetArticleRating({
+    articleId,
+    userId: userData?.id ?? '',
+  });
 
-    const [rateArticleMutation] = useRateArticle(); // при мутации возвращается массив: [функция, вызывающая мутацию, объект с настройками (data, error, isLoading ...)]
+  const [rateArticleMutation] = useRateArticle(); // при мутации возвращается массив: [функция, вызывающая мутацию, объект с настройками (data, error, isLoading ...)]
 
-    const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
-        try {
-            rateArticleMutation({
-                userId: userData?.id ?? '',
-                articleId,
-                rate: starsCount,
-                feedback,
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }, [articleId, rateArticleMutation, userData?.id]);
+  const handleRateArticle = useCallback(
+    (starsCount: number, feedback?: string) => {
+      try {
+        rateArticleMutation({
+          userId: userData?.id ?? '',
+          articleId,
+          rate: starsCount,
+          feedback,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    [articleId, rateArticleMutation, userData?.id],
+  );
 
-    const onCancel = useCallback((starsCount: number) => {
-        handleRateArticle(starsCount);
-    }, [handleRateArticle]);
+  const onCancel = useCallback(
+    (starsCount: number) => {
+      handleRateArticle(starsCount);
+    },
+    [handleRateArticle],
+  );
 
-    const onAccept = useCallback((starsCount: number, feedback?: string) => {
-        handleRateArticle(starsCount, feedback);
-    }, [handleRateArticle]);
+  const onAccept = useCallback(
+    (starsCount: number, feedback?: string) => {
+      handleRateArticle(starsCount, feedback);
+    },
+    [handleRateArticle],
+  );
 
-    const [rating] = data ?? [];
+  const [rating] = data ?? [];
 
-    if (isLoading) {
-        return <Skeleton width="100%" height={120} />;
-    }
+  if (isLoading) {
+    return <Skeleton width="100%" height={120} />;
+  }
 
-    return (
-        <RatingCard
-            onCancel={onCancel}
-            onAccept={onAccept}
-            rate={rating?.rate}
-            className={className}
-            title={t('Оцените статью')}
-            feedbackTitle={t('Оставьте свой отзыв в статье, это поможет улучшить качество')}
-            hasFeedback
-        />
-    );
+  return (
+    <RatingCard
+      onCancel={onCancel}
+      onAccept={onAccept}
+      rate={rating?.rate}
+      className={className}
+      title={t('Оцените статью')}
+      feedbackTitle={t(
+        'Оставьте свой отзыв в статье, это поможет улучшить качество',
+      )}
+      hasFeedback
+    />
+  );
 };
 export default memo(ArticleRating);

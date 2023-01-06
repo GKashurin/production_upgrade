@@ -5,11 +5,11 @@ import { Loader } from './Loader';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Loader',
-    component: Loader,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'shared/Loader',
+  component: Loader,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Loader>;
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;

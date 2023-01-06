@@ -1,5 +1,8 @@
 import {
-    AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { AxiosInstance } from 'axios';
@@ -18,7 +21,7 @@ export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   scroll: ScrollSaveSchema;
-  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema;
@@ -26,7 +29,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
-  articleDetailsPage?: ArticleDetailsPageSchema
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -49,5 +52,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArg;
-  state: StateSchema
+  state: StateSchema;
 }

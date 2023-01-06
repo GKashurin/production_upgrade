@@ -11,29 +11,32 @@ interface CurrencySelectProps {
 }
 
 const options = [
-    { value: Currency.RUB, content: Currency.RUB },
-    { value: Currency.EUR, content: Currency.EUR },
-    { value: Currency.USD, content: Currency.USD },
+  { value: Currency.RUB, content: Currency.RUB },
+  { value: Currency.EUR, content: Currency.EUR },
+  { value: Currency.USD, content: Currency.USD },
 ];
 
-export const CurrencySelect = memo(({
-    value, onChange, readonly, className,
-}: CurrencySelectProps) => {
+export const CurrencySelect = memo(
+  ({ value, onChange, readonly, className }: CurrencySelectProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
+    const onChangeHandler = useCallback(
+      (value: string) => {
         onChange?.(value as Currency);
-    }, [onChange]);
+      },
+      [onChange],
+    );
 
     return (
-        <ListBox
-            value={value ?? ''}
-            items={options}
-            defaultValue={t('Укажите валюту')}
-            label={t('Укажите валюту')}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction="top right"
-        />
+      <ListBox
+        value={value ?? ''}
+        items={options}
+        defaultValue={t('Укажите валюту')}
+        label={t('Укажите валюту')}
+        onChange={onChangeHandler}
+        readonly={readonly}
+        direction="top right"
+      />
     );
-});
+  },
+);

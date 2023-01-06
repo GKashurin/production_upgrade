@@ -5,14 +5,16 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 export default {
-    title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
-    component: ArticleDetailsPageHeader,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
+  component: ArticleDetailsPageHeader,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ArticleDetailsPageHeader>;
 
-const Template: ComponentStory<typeof ArticleDetailsPageHeader> = () => <ArticleDetailsPageHeader />;
+const Template: ComponentStory<typeof ArticleDetailsPageHeader> = () => (
+  <ArticleDetailsPageHeader />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

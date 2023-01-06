@@ -7,9 +7,7 @@ import { CommentList } from '@/entities/Comment';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/Stack';
-import {
-    fetchCommentsByArticleId,
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
@@ -20,7 +18,8 @@ interface ArticleDetailsCommentsProps {
   id?: string;
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
+export const ArticleDetailsComments = memo(
+  (props: ArticleDetailsCommentsProps) => {
     const { id, className } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
@@ -29,24 +28,25 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-    const onSendComment = useCallback((text: string) => {
+    const onSendComment = useCallback(
+      (text: string) => {
         dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+      },
+      [dispatch],
+    );
 
     useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
+      dispatch(fetchCommentsByArticleId(id));
     });
 
     return (
-        <VStack gap="16" max>
-            <Text
-                size={TextSize.L}
-                title={t('Комментарии')}
-            />
-            <Suspense fallback={<Loader />}>
-                <AddCommentForm onSendComment={onSendComment} />
-            </Suspense>
-            <CommentList comments={comments} isLoading={commentsIsLoading} />
-        </VStack>
+      <VStack gap="16" max>
+        <Text size={TextSize.L} title={t('Комментарии')} />
+        <Suspense fallback={<Loader />}>
+          <AddCommentForm onSendComment={onSendComment} />
+        </Suspense>
+        <CommentList comments={comments} isLoading={commentsIsLoading} />
+      </VStack>
     );
-});
+  },
+);
