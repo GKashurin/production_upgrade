@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Page } from '@/widgets/Page';
-import { Counter } from '@/entities/Counter';
+import React, {memo} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Page} from '@/widgets/Page';
+import {Counter} from '@/entities/Counter';
 
 const MainPage = memo(() => {
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   // interface Square {
   //     width: number;
@@ -43,10 +43,33 @@ const MainPage = memo(() => {
   //     }
   // }
 
+  type Direction = 'asc' | 'desc';
+
+  interface ID {
+    id: number;
+  }
+
+  function sortById<T extends ID>(data: T[], direction: Direction = 'asc'): T[] {
+    return data.sort((a, b) => {
+      if (direction === 'asc') {
+        return a.id - b.id
+      } 
+        return b.id - a.id
+      
+    })
+  }
+
+  const data = [
+    {id: 2, name: 'a'},
+    {id: 1, name: 'b'},
+    {id: 3, name: 'c'},
+  ]
+  console.log(sortById(data, 'desc'))
+
   return (
     <Page data-testid="MainPage">
       {t('Главная страница')}
-      <Counter />
+      <Counter/>
     </Page>
   );
 });
